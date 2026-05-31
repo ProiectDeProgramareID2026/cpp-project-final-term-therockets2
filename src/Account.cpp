@@ -38,3 +38,10 @@ void Account::withdrawFunds(double amount){
     balance -= amount;
 }
 
+string Account::toString() const {
+    return "Account #" + to_string(getId())
+        + " | IBAN: " + IBAN
+        + " | Balance: " + to_string(balance)
+        + " " + currency;
+}
+

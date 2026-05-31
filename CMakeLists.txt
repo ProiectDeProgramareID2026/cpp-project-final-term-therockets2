@@ -10,4 +10,8 @@ add_executable(cpp_project_planning_therockets main.cpp
         include/Account.h
         src/Client.cpp
         include/Client.h
+        src/currentAccount.cpp
+        include/currentAccount.h
+        src/SavingsAccount.cpp
+        include/SavingsAccount.h
 )

@@ -30,7 +30,7 @@ public:
     void addFunds(double amount);
     void withdrawFunds(double amount);
 
-    virtual string toString() const override;
+    virtual string toString() const;
     virtual string toFileEntry() const = 0;
 };
 
