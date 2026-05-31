@@ -1,0 +1,24 @@
+# CLion
+.idea/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.vcxproj.user
+
+# VS Code (pentru orice altcineva)
+.vscode/
+
+# CMake
+cmake-build-debug/
+cmake-build-release/
+cmake-build-*/
+
+# Compiled
+*.exe
+*.out
+*.o
+*.a
+*.lib
+*.pdb
