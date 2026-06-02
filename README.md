@@ -1,26 +1,41 @@
-# C++ Project / Planning - 20 Points
+# C++ Project / Final Term - 30p
 ## EN
-Based on the project's statement, create a PDF file containing the technical description of the project.
+Implement the final version of your C++ project based on the previously submitted plan.
 
-- (2p) PDF follows the example format from [example](en_example.pdf)
-- (4p) PDF contains project's description with tasks split by students
-- (4p) PDF contains data structures (classes) used by the team
-- (4p) PDF contains all file's structures used to communicate between the apps
-- (6p) PDF contains all the commands the apps will implement
+The application must meet the following technical requirements:
+- (3p) Use of classes and objects
+- (1.5p) Project documentation in PDF format
+- (1.5p) Code documentation (clear, explanatory comments)
+- (3p) Clean code (naming, organization, logical separation)
+- (3p) File handling (reading/writing to files)
+- (3p) Use of STL containers (e.g., vector, list, etc.)
+- (3p) Operator overloading (e.g., << for display)
+- (1.5p) Use of a template function or class in a relevant way
+- (1.5p) At least one association or inheritance relationship between classes
+- (3p) Functionality implemented according to the project description
+- (6p) Command-line argument parsing and validation
 
-> [!note]
-> C++ project will not allow input from keyboard (so std::cin or variations are not allowed, only command line arguments). <br/>
-> You'll need at least two classes to be in a relationship (inheritance, association, composition, aggregation).
+Extra Credit:
+- (+5p) Use of smart pointers (unique_ptr, shared_ptr)
+- (+10p) A simple graphical interface (e.g., Qt, ImGui, SFML)
 
 ## RO
-În funcție de enunțul proiectului, creați un fișier PDF care să conțină detaliile tehnice ale proiectului.
+Implementați versiunea finală a proiectului C++ pe baza planului transmis anterior.
 
-- (2p) Documentul PDF respectă formatul din [exemplu](ro_example.pdf)
-- (4p) Documentul PDF conține descrierea proiectului și taskurile împărțite între membrii echipei
-- (4p) Documentul PDF conține descrierea structurii datelor (clasele) folosite de echipă
-- (4p) Documentul PDF conține structura tuturor fișierelor folosite de către echipă pentru comunicarea între aplicații
-- (6p) Documentul PDF conține toate comenzile pe care aplicațiile le vor expune
+Aplicația trebuie să respecte următoarele cerințe tehnice:
 
-> [!note]
-> Proiectul C++ nu permite folosirea introducerii datelor de la tastatură (deci std::cin sau variațiuniile nu sunt permise, folosiți argumente pe linia de comandă). <br/>
-> Aveți nevoie ca cel puțin două clase să se afle într-o relație (moștenire, asociere, compoziție, agregare).
+- (3p) Folosirea de clase și obiecte
+- (1,5p) Documentația proiectului în format PDF
+- (1,5p) Documentarea codului sursă (comentarii clare, explicative)
+- (3p) Clean code (naming, organizare, separare logică)
+- (3p) Lucrul cu fișiere (citire/scriere în fișier)
+- (3p) Folosirea STL pentru containere (vector, list, etc.)
+- (3p) Supraincărcarea operatorilor (ex: << pentru afișare)
+- (1,5p) Funcție sau clasă template folosită într-un mod relevant
+- (1,5p) Relație de asociere sau moștenire între clase
+- (3p) Funcționalități implementate conform descrierii proiectului
+- (6p) Preluare și validare de argumente din linia de comandă
+
+Bonus (opțional)
+- (5p) Folosirea de smart pointers (unique_ptr, shared_ptr)
+- (10p) Interfață grafică simplă (ex: Qt, ImGui, SFML)
