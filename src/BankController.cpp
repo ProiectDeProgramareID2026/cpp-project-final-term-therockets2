@@ -2,6 +2,7 @@
 #include "../include/Bank.h"
 #include "../include/CurrentAccount.h"
 #include "../include/SavingsAccount.h"
+#include "../include/services/PrintService.h"
 
 #include <iostream>
 #include <fstream>
@@ -77,6 +78,33 @@ void BankController::closeAccount(string clientName, string iban) {
     bank->closeAccount(account);
 
     cout << "Successfully closed account " << iban << endl;
+}
+
+void BankController::listAccounts(string clientName) {
+    if (!bank->clientExists(clientName)) {
+        cout << "Unable to find client: " << clientName << endl;
+        return;
+    }
+
+    shared_ptr<Client> client = bank->getClient(clientName);
+    vector<shared_ptr<Account>> clientAccounts;
+
+    for (const auto& account : bank->getAccounts()) {
+        if (account->getOwner()->getName() == clientName) {
+            clientAccounts.push_back(account);
+        }
+    }
+
+    printer.printClientAccounts(client, clientAccounts);
+}
+
+void BankController::showAccount(string iban) {
+    if (!bank->accountExists(iban)) {
+        cout << "Unable to find account with IBAN: " << iban << endl;
+        return;
+    }
+
+    printer.printAccount(bank->getAccount(iban));
 }
 
 int BankController::readClients(string filepath) {

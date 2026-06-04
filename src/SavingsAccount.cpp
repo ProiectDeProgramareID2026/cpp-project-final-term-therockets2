@@ -18,6 +18,10 @@ double SavingsAccount::getInterestRate() const {
     return interestRate;
 }
 
+string SavingsAccount::getType() const {
+    return "Savings";
+}
+
 string SavingsAccount::toString() const {
     return Account::toString() +  "| Type: Savings | Interest: " + to_string(interestRate);
 }

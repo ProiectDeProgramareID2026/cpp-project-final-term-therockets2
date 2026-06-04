@@ -18,6 +18,7 @@ public:
 
     double getManagementFee() const;
 
+    string getType() const override;
     string toString() const override;
     string toFileEntry() const override;
 };
