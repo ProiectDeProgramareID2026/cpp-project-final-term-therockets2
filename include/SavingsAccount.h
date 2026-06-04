@@ -11,7 +11,8 @@ class SavingsAccount : public Account{
 private:
     double interestRate;
 public:
-    SavingsAccount(weak_ptr<Client> owner, string IBAN, string currency, double balance, double interestRate);
+    SavingsAccount(shared_ptr<Client> owner, const string& currency, double interestRate);
+    SavingsAccount(int id, shared_ptr<Client> owner, const string& iban, const string& currency, double balance, double interestRate);
     ~SavingsAccount();
 
     double getInterestRate() const;

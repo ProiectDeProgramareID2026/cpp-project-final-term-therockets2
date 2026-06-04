@@ -5,11 +5,10 @@
 #include "../include/CurrentAccount.h"
 #include "../include/Client.h"
 
-CurrentAccount::CurrentAccount(const weak_ptr<Client>& owner,
-    string IBAN,
-    string currency,
-    double balance,
-    double managementFee) : Account(owner, IBAN, currency, balance){
+CurrentAccount::CurrentAccount(shared_ptr<Client> owner, const string& currency, double managementFee) : Account(owner, currency){
+        this->managementFee = managementFee;
+    }
+CurrentAccount::CurrentAccount(int id, shared_ptr<Client> owner, const string& iban, const string& currency, double balance, double managementFee) : Account(id, owner, currency, iban, balance){
         this->managementFee = managementFee;
     }
 
@@ -20,15 +19,11 @@ double CurrentAccount::getManagementFee() const {
 }
 
 string CurrentAccount::toString() const {
-    return Account::toString() +  "| Type: Current |Fee: " + to_string(managementFee);
+    return Account::toString() +  "| Type: Current | Fee: " + to_string(managementFee);
 }
 
 string CurrentAccount::toFileEntry() const {
-    string ownerId = "0";
-    if (auto client = getOwner().lock()) {
-        ownerId = to_string(client->getId());
-    }
-    return ownerId + ","
-    + getIBAN() + "," + to_string(getBalance()) + "," + getCurrency()
+    return to_string(getId()) + "," + to_string(getOwner()->getId()) + "," + "Current" + ","
+    + getIBAN() + "," + getCurrency() + "," + to_string(getBalance())
     + "," + to_string(managementFee);
 }

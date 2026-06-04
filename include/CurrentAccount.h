@@ -5,13 +5,15 @@
 #ifndef CPP_PROJECT_PLANNING_THEROCKETS_CURRENTACCOUNT_H
 #define CPP_PROJECT_PLANNING_THEROCKETS_CURRENTACCOUNT_H
 #include "Account.h"
+#include <string>
 
 
 class CurrentAccount : public Account{
 private:
     double managementFee;
 public:
-    CurrentAccount(const weak_ptr<Client>& owner, string IBAN, string currency, double balance, double managementFee);
+    CurrentAccount(shared_ptr<Client> owner, const string& currency, double managementFee);
+    CurrentAccount(int id, shared_ptr<Client> owner, const string& iban, const string& currency, double balance, double managementFee);
     ~CurrentAccount();
 
     double getManagementFee() const;

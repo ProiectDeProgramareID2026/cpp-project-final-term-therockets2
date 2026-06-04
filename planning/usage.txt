@@ -1,0 +1,4 @@
+.\out\build\x64-Debug\cpp_project_planning_therockets.exe --add-client asd11
+.\out\build\x64-Debug\cpp_project_planning_therockets.exe --open-account asd11 Current RON
+.\out\build\x64-Debug\cpp_project_planning_therockets.exe --open-account asd11 Savings EUR
+.\out\build\x64-Debug\cpp_project_planning_therockets.exe --close-account asd11 IBAN1017

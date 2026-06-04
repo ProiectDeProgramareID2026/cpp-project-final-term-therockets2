@@ -14,4 +14,4 @@ add_executable(cpp_project_planning_therockets main.cpp
         include/currentAccount.h
         src/SavingsAccount.cpp
         include/SavingsAccount.h
-)
+ "include/Bank.h" "include/Transaction.h" "src/Bank.cpp" "src/Transaction.cpp" "src/CLICMD.cpp" "include/CLICMD.h" "include/BankController.h" "src/BankController.cpp" "src/Utils.cpp" "include/Utils.h")

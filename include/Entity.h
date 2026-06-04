@@ -13,6 +13,7 @@ private:
     int id;
 public:
     Entity();
+    Entity(int id);
     virtual ~Entity() = default;
     int getId() const;
 
