@@ -16,13 +16,15 @@ class Client;
 
 class Account : public Entity{
 private:
-    weak_ptr<Client> owner;
+    shared_ptr<Client> owner;
     string IBAN, currency;
     double balance;
+    inline static int IBANID = 0;
 public:
-    Account(weak_ptr<Client> owner, string IBAN, string currency, double balance);
+    Account(shared_ptr<Client> owner, const string& currency);
+    Account(int id, shared_ptr<Client> owner, const string& currency, const string& iban, double balance);
     virtual ~Account() = default;
-    weak_ptr<Client> getOwner() const;
+    shared_ptr<Client> getOwner() const;
     string getIBAN() const;
     double getBalance() const;
     string getCurrency() const;

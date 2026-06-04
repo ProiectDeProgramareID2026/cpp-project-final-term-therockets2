@@ -17,14 +17,15 @@ class Client : public Entity{
 private:
     string name;
     vector<weak_ptr<Account>> accounts;
-    weak_ptr<Bank> bank;
+    //weak_ptr<Bank> bank;
 public:
-    Client(string name, vector<weak_ptr<Account>> accounts, weak_ptr<Bank>);
+    Client(string name);
+    Client(int id, string name);
     ~Client() override = default;
 
     string getName() const;
     vector<weak_ptr<Account>> getAccounts() const;
-    weak_ptr<Bank> getBank() const;
+    //weak_ptr<Bank> getBank() const;
 
     void addFunds(Account &account, double amount);
 

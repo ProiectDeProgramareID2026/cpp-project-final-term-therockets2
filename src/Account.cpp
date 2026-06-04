@@ -6,18 +6,26 @@
 #include "../include/Client.h"
 
 #include <string>
+#include <stdexcept>
 
 using namespace std;
 
-Account::Account(weak_ptr<Client> owner, string IBAN, string currency, double balance)
+Account::Account(shared_ptr<Client> owner, const string& currency)
     : Entity(){
     this->owner = owner;
-    this->IBAN = IBAN;
-    this-> currency = currency;
+    this->currency = currency;
+    this->IBAN = "IBAN" + to_string(getId());
+    this->balance = 0.0;
+}
+Account::Account(int id, shared_ptr<Client> owner, const string& currency, const string& iban, double balance)
+    : Entity(id){
+    this->owner = owner;
+    this->currency = currency;
+    this->IBAN = iban;
     this->balance = balance;
 }
 
-weak_ptr<Client> Account::getOwner() const {return owner;}
+shared_ptr<Client> Account::getOwner() const {return owner;}
 string Account::getIBAN() const {return IBAN;}
 double Account::getBalance() const {return balance;}
 string Account::getCurrency() const {return currency;}

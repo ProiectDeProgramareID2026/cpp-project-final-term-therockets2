@@ -6,6 +6,7 @@
 using namespace std;
 int Entity::nextId = 1;
 Entity::Entity() : id(nextId++){}
+Entity::Entity(int id) : id(id) { nextId = id + 1; }
 
 int Entity::getId() const {
     return id;
