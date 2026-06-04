@@ -14,4 +14,6 @@ add_executable(cpp_project_planning_therockets main.cpp
         include/currentAccount.h
         src/SavingsAccount.cpp
         include/SavingsAccount.h
- "include/Bank.h" "include/Transaction.h" "src/Bank.cpp" "src/Transaction.cpp" "src/CLICMD.cpp" "include/CLICMD.h" "include/BankController.h" "src/BankController.cpp" "src/Utils.cpp" "include/Utils.h" "include/services/PrintService.h" "src/services/PrintService.cpp")
+ "include/Bank.h" "include/Transaction.h" "src/Bank.cpp" "src/Transaction.cpp" "src/CLICMD.cpp" "include/CLICMD.h" "include/BankController.h" "src/BankController.cpp" "src/Utils.cpp" "include/Utils.h" "include/services/PrintService.h" "src/services/PrintService.cpp"
+        "include/services/DepositService.h" "src/services/DepositService.cpp"
+        "include/services/WithdrawService.h" "src/services/WithdrawService.cpp")
