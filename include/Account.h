@@ -32,6 +32,7 @@ public:
     void addFunds(double amount);
     void withdrawFunds(double amount);
 
+    virtual string getType() const = 0;
     virtual string toString() const;
     virtual string toFileEntry() const = 0;
 };

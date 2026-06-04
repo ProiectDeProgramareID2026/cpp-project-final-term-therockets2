@@ -18,6 +18,10 @@ double CurrentAccount::getManagementFee() const {
     return managementFee;
 }
 
+string CurrentAccount::getType() const {
+    return "Current";
+}
+
 string CurrentAccount::toString() const {
     return Account::toString() +  "| Type: Current | Fee: " + to_string(managementFee);
 }

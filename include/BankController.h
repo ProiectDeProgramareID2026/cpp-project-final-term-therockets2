@@ -1,8 +1,10 @@
 #pragma once
 #include "Bank.h"
+#include "services/PrintService.h"
 
 class BankController {
 	shared_ptr<Bank> bank;
+	PrintService printer;
 public:
 	BankController(shared_ptr<Bank>);
 
@@ -26,8 +28,8 @@ public:
 	void deposit(string, string, double);
 	void withdraw(string, string, double);
 	void transfer(string);
-	void listAccounts();
-	void listAccounts(string);
+	void listAccounts(string clientName);
+	void showAccount(string iban);
 
 	int readClients(string = "data/clients.csv");
 	int readAccounts(string = "data/accounts.csv");

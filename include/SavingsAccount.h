@@ -16,6 +16,7 @@ public:
     ~SavingsAccount();
 
     double getInterestRate() const;
+    string getType() const override;
     string toString() const override;
     string toFileEntry() const override;
 };

@@ -46,6 +46,16 @@ int main(int argc, char** argv) {
         const string& iban = cmd.values[1];
         bctrl.closeAccount(clientName, iban);
     }
+    else if (cmd.action == "--list-owner-acc") {
+        if (!meetsMinimumArgsCriteria(cmd.values, 1)) return 0;
+        const string& clientName = cmd.values[0];
+        bctrl.listAccounts(clientName);
+    }
+    else if (cmd.action == "--show-account") {
+        if (!meetsMinimumArgsCriteria(cmd.values, 1)) return 0;
+        const string& iban = cmd.values[0];
+        bctrl.showAccount(iban);
+    }
     else {
         cout << "Unknown command: " << "\"" << cmd.action << "\"" << endl;
     }
