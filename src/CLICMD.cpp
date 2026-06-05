@@ -18,12 +18,3 @@ void CLICMD::parse_args(int argc, char** argv) {
 	}
 	if (action != "") valid = true;
 }
-
-void CLICMD::execute() {
-	if (values.empty()) {
-		valid = false;
-		return;
-	}
-
-	//if(type.toLower)
-}

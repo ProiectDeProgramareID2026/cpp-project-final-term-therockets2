@@ -1,6 +1,8 @@
-.\out\build\x64-Debug\cpp_project_planning_therockets.exe --add-client asd11
-.\out\build\x64-Debug\cpp_project_planning_therockets.exe --open-account asd11 Current RON
-.\out\build\x64-Debug\cpp_project_planning_therockets.exe --open-account asd11 Savings EUR
-.\out\build\x64-Debug\cpp_project_planning_therockets.exe --close-account asd11 IBAN1017
-.\out\build\x64-Debug\cpp_project_planning_therockets.exe --list-owner-acc asd11
+.\out\build\x64-Debug\cpp_project_planning_therockets.exe --add-client asd2
+.\out\build\x64-Debug\cpp_project_planning_therockets.exe --open-account asd2 Current RON
+.\out\build\x64-Debug\cpp_project_planning_therockets.exe --open-account asd2 Savings EUR
+.\out\build\x64-Debug\cpp_project_planning_therockets.exe --close-account asd2 IBAN1017
+.\out\build\x64-Debug\cpp_project_planning_therockets.exe --list-owner-acc asd2
 .\out\build\x64-Debug\cpp_project_planning_therockets.exe --show-account IBAN1017
+.\out\build\x64-Debug\cpp_project_planning_therockets.exe --deposit asd11 IBAN1018 10
+.\out\build\x64-Debug\cpp_project_planning_therockets.exe --withdraw asd11 IBAN1018 5

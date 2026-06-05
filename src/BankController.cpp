@@ -154,7 +154,6 @@ void BankController::showAccount(string iban) {
 }
 
 int BankController::readClients(string filepath) {
-    cout << "Reading clients" << endl;
     ifstream file(filepath);
     if (!file.is_open()) {
         cerr << "Error: Could not open the file for reading: " << filepath << endl;
@@ -181,7 +180,6 @@ int BankController::readClients(string filepath) {
 }
 
 int BankController::readAccounts(string filepath) {
-    cout << "Reading accounts" << endl;
     ifstream file(filepath);
     if (!file.is_open()) {
         cerr << "Error: Could not open the file for reading: " << filepath << endl;
@@ -213,7 +211,6 @@ int BankController::readAccounts(string filepath) {
 }
 
 int BankController::writeClients(string filepath) {
-    cout << "Writing clients" << endl;
     ofstream file(filepath);
     if (!file.is_open()) {
         cerr << "Error: Could not open the file for writing: " << filepath << endl;
@@ -228,7 +225,6 @@ int BankController::writeClients(string filepath) {
 }
 
 int BankController::writeAccounts(string filepath) {
-    cout << "Writing accounts" << endl;
     ofstream file(filepath);
     if (!file.is_open()) {
         cerr << "Error: Could not open the file for writing: " << filepath << endl;

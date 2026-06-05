@@ -21,7 +21,7 @@ int main(int argc, char** argv) {
 
     if (!cmd.valid) {
         cout << "Invalid command! See tool usage:" << endl;
-        // print menu
+        printCommands();
         return 0;
     }
 
@@ -80,6 +80,7 @@ int main(int argc, char** argv) {
     }
     else {
         cout << "Unknown command: " << "\"" << cmd.action << "\"" << endl;
+        printCommands();
     }
 
     bctrl.writeClients();
