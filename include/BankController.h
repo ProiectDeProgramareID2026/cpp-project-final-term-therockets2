@@ -1,10 +1,14 @@
 #pragma once
 #include "Bank.h"
 #include "services/PrintService.h"
+#include "services/DepositService.h"
+#include "services/WithdrawService.h"
 
 class BankController {
 	shared_ptr<Bank> bank;
 	PrintService printer;
+	DepositService depositService;
+	WithdrawService withdrawService;
 public:
 	BankController(shared_ptr<Bank>);
 

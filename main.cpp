@@ -46,6 +46,28 @@ int main(int argc, char** argv) {
         const string& iban = cmd.values[1];
         bctrl.closeAccount(clientName, iban);
     }
+    else if (cmd.action == "--deposit") {
+        if (!meetsMinimumArgsCriteria(cmd.values, 3)) return 0;
+        const string& clientName = cmd.values[0];
+        const string& iban = cmd.values[1];
+        const string& amountStr = cmd.values[2];
+        if (!isValidAmount(amountStr)) {
+            cout << "Invalid amount: \"" << amountStr << "\". Must be a positive number with at most 2 decimal places." << endl;
+            return 0;
+        }
+        bctrl.deposit(clientName, iban, parseAmount(amountStr));
+    }
+    else if (cmd.action == "--withdraw") {
+        if (!meetsMinimumArgsCriteria(cmd.values, 3)) return 0;
+        const string& clientName = cmd.values[0];
+        const string& iban = cmd.values[1];
+        const string& amountStr = cmd.values[2];
+        if (!isValidAmount(amountStr)) {
+            cout << "Invalid amount: \"" << amountStr << "\". Must be a positive number with at most 2 decimal places." << endl;
+            return 0;
+        }
+        bctrl.withdraw(clientName, iban, parseAmount(amountStr));
+    }
     else if (cmd.action == "--list-owner-acc") {
         if (!meetsMinimumArgsCriteria(cmd.values, 1)) return 0;
         const string& clientName = cmd.values[0];

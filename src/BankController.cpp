@@ -3,6 +3,8 @@
 #include "../include/CurrentAccount.h"
 #include "../include/SavingsAccount.h"
 #include "../include/services/PrintService.h"
+#include "../include/services/DepositService.h"
+#include "../include/services/WithdrawService.h"
 
 #include <iostream>
 #include <fstream>
@@ -78,6 +80,50 @@ void BankController::closeAccount(string clientName, string iban) {
     bank->closeAccount(account);
 
     cout << "Successfully closed account " << iban << endl;
+}
+
+//functie de adaugare fonduri cu verificare dupa numele clientului
+void BankController::deposit(string clientName, string iban, double amount) {
+    if (!bank->clientExists(clientName)) {
+        cout << "Unable to find client: " << clientName << endl;
+        return;
+    }
+    if (!bank->accountExists(iban)) {
+        cout << "Unable to find account with IBAN: " << iban << endl;
+        return;
+    }
+
+    shared_ptr<Account> account = bank->getAccount(iban);
+    shared_ptr<Client> client = bank->getClient(clientName);
+
+    if (account->getOwner() != client) {
+        cout << "Account " << iban << " does not belong to " << clientName << endl;
+        return;
+    }
+
+    depositService.deposit(account, amount);
+}
+
+//functie de extragere fonduri cu verificare dupa numele clientului.
+void BankController::withdraw(string clientName, string iban, double amount) {
+    if (!bank->clientExists(clientName)) {
+        cout << "Unable to find client: " << clientName << endl;
+        return;
+    }
+    if (!bank->accountExists(iban)) {
+        cout << "Unable to find account with IBAN: " << iban << endl;
+        return;
+    }
+
+    shared_ptr<Account> account = bank->getAccount(iban);
+    shared_ptr<Client> client = bank->getClient(clientName);
+
+    if (account->getOwner() != client) {
+        cout << "Account " << iban << " does not belong to " << clientName << endl;
+        return;
+    }
+
+    withdrawService.withdraw(account, amount);
 }
 
 void BankController::listAccounts(string clientName) {
